@@ -1,0 +1,46 @@
+
+.start_prompt{
+  position: fixed;
+	background-color: #abacab;
+	color: #ffffff;
+  top: 10%;
+  left: 10%;
+  width: 30%;
+	height: 40%;
+  border: 3px solid #ffffff;
+	border-radius: 20px 20px 20px 5px;
+	font-family: monospace;
+	font-size: 1.5vw;
+	text-align: center;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-top: 2%;
+	padding-bottom: 5%;
+}
+
+#midi_selector, #visual_selector, .start_panel{
+	appearance:none;
+	border: 1px solid #AAA;
+	    border-radius: 2px;
+	    box-shadow: 0px 1px 0px rgba(0, 0, 0, 1);
+	    color: #000000;
+			background-color: #ffffff;
+			font-family:monospace;
+	    font-size: 1vw;
+	    overflow: hidden;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+			padding-right: 5px;
+			padding-left: 5px;
+			margin: 2% 1% 2% 0%;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+			transition: box-shadow 2s, outline, background-color;
+}
+
+.start_panel:active{
+				background-color: #666666;
+}
+.start_panel:focus {
+	outline:none;
+}

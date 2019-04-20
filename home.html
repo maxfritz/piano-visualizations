@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>player piano</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/webmidi"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/86/three.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+	<!-- <script src="webmidi_read.js"></script> -->
+	<script src="start_page.js"></script>
+	<!-- <script src="modules/modules.js"></script> -->
+
+	<link rel = "stylesheet"
+    type = "text/css"
+    href = "css/start_page.css" />
+
+  </head>
+</head>
+<style>
+
+html{
+  height: 100%;
+    margin:0px;
+    padding:0px;
+    overflow: hidden;
+}
+body{
+    min-height: 100%;
+    margin:0px;
+    padding:0px;
+    overflow: hidden;
+}
+
+</style>
+
+<body id="body">
+	<div class="start_prompt">
+	  <p>Welcome! <br> <br>To get started, please select a midi device:<br>
+	    <select id="midi_selector">
+				<option>No selection</option>
+	    </select>
+			<br><br>
+			and a module:
+      <br>
+			<select id="visual_selector">
+				<option>No Selection</option>
+				<option>Circles</option>
+			</select>
+			<br><br>
+			<button class="start_panel" onClick="start_mod()">start</button>
+			<button class="start_panel" onClick="load_midi()">refresh midi inputs</button>
+			<button class="start_panel">report a bug</button>
+	  </p>
+	</div>
+	<script>
+
+	WebMidi.enable(function(err) {
+	  if (err) {
+	    console.log("Could not enable WebMidi.");
+	  }
+
+		var midi_selector = document.getElementById("midi_selector");
+
+		for(var i in WebMidi.inputs){
+		  var option = document.createElement("option");
+		  option.text = WebMidi.inputs[i].name;
+		  midi_selector.add(option);
+		}});
+	</script>
+
+</body>
+</html>
