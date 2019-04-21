@@ -1,12 +1,7 @@
 function start_mod(){
   $(".start_prompt").append("<p>Starting...</p>")
-  $.ajaxSetup({'cache':true});
-  var script = $.getScript( "modules/basic_circles");
 
-  $("body").append(script)
-  startmylilcircles();
-  $.getScript( "modules/basic_circles",startmylilcircles());
-
+  setTimeout(startmylilcircles(),750);
   setTimeout(()=>{
   $(".start_prompt").remove();},1500)
 }
