@@ -3,7 +3,7 @@ function start_mod(){
 
   setTimeout(startmylilcircles(),750);
   setTimeout(()=>{
-  $(".start_prompt").remove();},1500)
+  $(".start_prompt").remove();},1000)
 }
 
 function removeOptions(selectbox)
