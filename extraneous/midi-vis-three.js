@@ -7,9 +7,6 @@ var near = 0.1, far = 2000; //distance from camera
 var scene = new THREE.Scene(); // container for everything
 var camera = new THREE.PerspectiveCamera(fov, aspect, near, far); //camera type
 
-
-
-
 // on resize
 window.addEventListener('resize', function() {
      var width = window.innerWidth,
@@ -18,8 +15,6 @@ window.addEventListener('resize', function() {
      camera.aspect = width / height;
      camera.updateProjectionMatrix();
    });
-
-
 
 camera.position.z = 20;
 var renderer = new THREE.WebGLRenderer(); // it is what it is
@@ -37,7 +32,7 @@ var animate = ()=>{
   requestAnimationFrame(animate); //notify browser that we want to animate
 
 cube.rotation.x += 0.01;
-cube.rotation.y += 0.01;
+cube.rotation.y += 0.1;
 
   renderer.render(scene,camera) // display the scene
 };

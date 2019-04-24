@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 import pygame.midi
 
 #initialize the module
@@ -11,13 +11,14 @@ print pygame.midi.get_device_info(0)
 #input stream for mio device //input only
 input_monitor = pygame.midi.Input(0)
 
+#21 to 108
 #into streaming loop
 while True:
 	if input_monitor.poll():
 		#read(buffer length)
 		#note data
-		print(input_monitor.read(1)[0][0])
-		#time
-		print(input_monitor.read(1)[0][1])
-		#all
 		print(input_monitor.read(1)[0])
+		#time
+        #print(input_monitor.read(1)[0][1])
+		#all
+        #print(input_monitor.read(1)[0])
